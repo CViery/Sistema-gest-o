@@ -3,20 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {%block title%}
-    {%endblock%}
+    {% block title %}
+    {% endblock %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
 </head>
 <body>
     <header>
-        <a href="">home</a>
-        <a href="">Cadastros</a>
-        <a href="">Consultas</a>
-        <a href="">configurações</a>
-        <a href="">sobre</a>
-        <a href="">sair</a>
+        <div class="logo">Minha Empresa</div>
+        <nav class="navbar">
+            <a href="/home">Inicio</a>
+            <a href="/cadastros">Cadastros</a>
+            <a href="#">Consultas</a>
+            <a href="/logout">Sair</a>
+        </nav>
     </header>
-    {% block main%}
-    {%endblock%}
+    <main>
+        {% block main %}
+        {% endblock %}
+    </main>
     <footer>
         <h5>Footer</h5>
     </footer>

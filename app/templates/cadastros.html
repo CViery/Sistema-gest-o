@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Cadastros</title>
+<link rel="stylesheet" href="{{url_for('static', filename= 'css/cadastros.css')}}">
+{% endblock %}
+
+{% block main %}
+<main>
+    <button class='option'>produtos</button>
+    <button class='option'>categoria</button>
+    <button class='option'>clientes</button>
+    <button class='option'>fornecedor</button>
+    <button class='option'>funcionarios</button>
+</main>
+
+{% endblock %}
