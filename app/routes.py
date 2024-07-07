@@ -1,10 +1,11 @@
 from app import app
 from flask import render_template, redirect, session, request
-from services import login
+from services import login, cadastros
 
 
 
 aut = login.Login()
+cadastrar = cadastros.Cadastros()
 @app.route('/home')
 def home():
         if 'user' in session:
@@ -44,3 +45,20 @@ def tela_cadastros():
         return render_template('cadastros.html')
     else:
         return redirect('/')
+    
+@app.route('/cadastros/produtos')
+def tela_cadastro_produtos():
+    if 'user' in session:
+        return render_template('cadastrar_produtos.html')
+    else:
+        return redirect('/')
+    
+@app.route('/cadastrar_produto', methods=['POST', 'GET'])
+def cadastrar_produto():
+    if request.method == 'POST':
+         
+         data = request.form.to_dict()
+         cadastrar.cadastrar_peca(data)
+         return redirect('/cadastros/produtos')
+
+@app.route('/cadastrar/')
