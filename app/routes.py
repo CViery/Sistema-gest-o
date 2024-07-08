@@ -1,7 +1,8 @@
 from app import app
 from flask import render_template, redirect, session, request
 from services import login, cadastros
-
+import requests
+from requests.structures import CaseInsensitiveDict
 
 
 aut = login.Login()
@@ -61,4 +62,20 @@ def cadastrar_produto():
          cadastrar.cadastrar_peca(data)
          return redirect('/cadastros/produtos')
 
-@app.route('/cadastrar/')
+@app.route('/cadastros/fornecedores')
+def tela_cadastro_fornecedor():
+    if 'user' in session:
+        return render_template('cadastrar_fornecedor.html')
+    else:
+        return redirect('/')
+
+@app.route('/cadastrar_produto', methods=['POST', 'GET'])
+def cadastrar_forncedor():
+    if request.method == 'POST':
+         data = request.form.to_dict()
+         cadastrar.cadastrar_peca(data)
+         return redirect('/cadastros/fornecedores')
+
+
+
+

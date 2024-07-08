@@ -1,0 +1,5 @@
+url = "https://publica.cnpj.ws/cnpj/27865757000102"
+resp = requests.get(url)
+print(resp.status_code)
+
+api cnpj
