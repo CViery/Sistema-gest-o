@@ -69,11 +69,11 @@ def tela_cadastro_fornecedor():
     else:
         return redirect('/')
 
-@app.route('/cadastrar_produto', methods=['POST', 'GET'])
+@app.route('/cadastrar_fornecedor', methods=['POST', 'GET'])
 def cadastrar_forncedor():
     if request.method == 'POST':
          data = request.form.to_dict()
-         cadastrar.cadastrar_peca(data)
+         
          return redirect('/cadastros/fornecedores')
 
 
