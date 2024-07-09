@@ -29,3 +29,69 @@ class CadastrosDB:
             print(e)
         finally:
             cursor.close()
+
+    def cadastrar_funcionario(self, dados):
+        try:
+            conn = self.get_conn()
+            cursor = conn.cursor()
+            id = dados["id"]
+            nome = dados["nome"]
+            email = dados["email"]
+            senha = dados["senha"]
+            query = "INSERT INTO funcionarios VALUES (?, ?, ?, ?)"
+            cursor.execute(query, (id, nome, email, senha))
+            conn.commit()
+            print("Salvo")
+        except Exception as e:
+            print(e)
+        finally:
+            cursor.close()
+    
+    def cadastrar_categorias(self, dados):
+        try:
+            conn = self.get_conn()
+            cursor = conn.cursor()
+            id = dados["id"]
+            nome = dados["categoria"]
+            query = "INSERT INTO categorias VALUES (?, ?)"
+            cursor.execute(query, (id, nome))
+            conn.commit()
+            print("Salvo")
+        except Exception as e:
+            print(e)
+        finally:
+            cursor.close()
+    
+    def cadastrar_clientes(self, dados):
+        try:
+            conn = self.get_conn()
+            cursor = conn.cursor()
+            nome = dados["nome"]
+            veiculo = dados["veiculo"]
+            placa = dados["placa"]
+            query = "INSERT INTO clientes VALUES (?, ?, ?)"
+            cursor.execute(query, (placa, veiculo, nome))
+            conn.commit()
+            print("Salvo")
+        except Exception as e:
+            print(e)
+        finally:
+            cursor.close()
+
+    def cadastrar_fornecedor(self, dados):
+        try:
+            conn = self.get_conn()
+            cursor = conn.cursor()
+            cnpj = dados["cnpj"]
+            razao_social = dados["razao_social"]
+            endereco = dados["endereco"]
+            email = dados["email"]
+            telefone = dados['telefone']
+            query = "INSERT INTO fornecedores VALUES (?, ?, ?, ?)"
+            cursor.execute(query, (cnpj, razao_social, endereco, email, telefone))
+            conn.commit()
+            print("Salvo")
+        except Exception as e:
+            print(e)
+        finally:
+            cursor.close()
