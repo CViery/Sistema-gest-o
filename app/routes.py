@@ -75,6 +75,13 @@ def cadastrar_forncedor():
          data = request.form.to_dict()
          
          return redirect('/cadastros/fornecedores')
+    
+    @app.route('/cadastrar_funcionario', methods=['POST', 'GET'])
+    def cadastrar_forncedor():
+        if request.method == 'POST':
+         data = request.form.to_dict()
+         
+         return redirect('/cadastros/funcionario')
 
 
 
