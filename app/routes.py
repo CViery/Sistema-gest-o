@@ -1,5 +1,5 @@
 from app import app
-from flask import render_template, redirect, session, request
+from flask import Flask, render_template, request, redirect, session
 from services import login, cadastros
 import requests
 from requests.structures import CaseInsensitiveDict
@@ -76,12 +76,46 @@ def cadastrar_forncedor():
          
          return redirect('/cadastros/fornecedores')
     
-    @app.route('/cadastrar_funcionario', methods=['POST', 'GET'])
-    def cadastrar_forncedor():
-        if request.method == 'POST':
+
+   
+
+from flask import render_template, request, redirect, session
+from app import app
+
+@app.route('/cadastros/funcionarios')
+def tela_cadastro_funcionario():
+    if 'user' in session:
+        return render_template('cadastrar_funcionario.html')
+    else:
+        return redirect('/')
+
+@app.route('/cadastrar_funcionario', methods=['POST'])
+def cadastrar_funcionario():
+    if request.method == 'POST':
+        # Aqui você deve processar os dados do formulário
+        data = request.form.to_dict()
+        # Exemplo de processamento dos dados (você precisa adaptar conforme sua lógica)
+        # Após salvar, redirecione para a página de listagem de funcionários
+        return redirect('/cadastros/funcionarios')
+
+
+        
+
+        
+
+@app.route('/cadastros/clientes')
+def tela_cadastro_fornecedor():
+    if 'user' in session:
+        return render_template('cadastrar_cliente.html')
+    else:
+        return redirect('/')
+
+@app.route('/cadastrar_cliente', methods=['POST', 'GET'])
+def cadastrar_forncedor():
+    if request.method == 'POST':
          data = request.form.to_dict()
          
-         return redirect('/cadastros/funcionario')
+         return redirect('/cadastros/clientes')
 
 
 
