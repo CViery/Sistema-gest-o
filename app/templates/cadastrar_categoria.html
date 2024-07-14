@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Categoria</title>
+<link rel="stylesheet" href="{{url_for('static', filename= 'css/cadastros.css')}}">
+{% endblock %}
+
+{% block main %}
+<main>
+  <form action="/cadastrar_categoria" method="post">
+    <label for="">Categoria:</label>
+   <input type="text">
+  </form>
+</main>
+
+{% endblock %}
+

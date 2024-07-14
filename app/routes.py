@@ -79,8 +79,7 @@ def cadastrar_forncedor():
 
    
 
-from flask import render_template, request, redirect, session
-from app import app
+
 
 @app.route('/cadastros/funcionarios')
 def tela_cadastro_funcionario():
@@ -104,14 +103,14 @@ def cadastrar_funcionario():
         
 
 @app.route('/cadastros/clientes')
-def tela_cadastro_fornecedor():
+def tela_cadastro_clientes():
     if 'user' in session:
         return render_template('cadastrar_cliente.html')
     else:
         return redirect('/')
 
 @app.route('/cadastrar_cliente', methods=['POST', 'GET'])
-def cadastrar_forncedor():
+def cadastrar_cliente():
     if request.method == 'POST':
          data = request.form.to_dict()
          
@@ -119,4 +118,16 @@ def cadastrar_forncedor():
 
 
 
+@app.route('/cadastros/categoria')
+def tela_cadastro_categoria():
+    if 'user' in session:
+        return render_template('cadastrar_categoria.html')
+    else:
+        return redirect('/')
 
+@app.route('/cadastrar_categoria', methods=['POST', 'GET'])
+def cadastrar_categoria():
+    if request.method == 'POST':
+         data = request.form.to_dict()
+         
+         return redirect('/cadastros/categoria')
