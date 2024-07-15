@@ -1,0 +1,62 @@
+ Sistema Estoque 
+ 
+ 
+ 
+<Tela de login:>
+*Usuário e senha.
+*Utilizar metodo key auth para verificacao do pacote adquirido e controle de tempo do usuario.
+*botao para redefinicao de senha
+
+<Tela de estoque:>
+*Entrada, saída e consulta
+*Filtragem por data/nome produtos/ id/categoria
+*Funcao de edicao de nome do produto
+
+<Tela de clientes:>
+*Cadastro, consulta 
+*Filtragem por nome/id/data/categoria(cnpj,cpf)
+
+<Tela de boletos:>
+*Cadastro, baixa e consulta
+*Filtragem por data/id/nome fornecedor
+
+<Tela de NF:>
+*Cadastro, baixa e consulta
+*Filtragem por nome/id/data
+
+<Tela de orcamentos:>
+*insercao de cliente/opcao cliente em branco
+*gerar orcamento em pdf para o envio via whatsapp e email.
+*busca com filtragem por nome,data,id cliente
+
+
+
+
+
+
+
+
+ETAPAS DE PRODUCAO DO PROJETO:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ABAIXO APENAS PARA SALVAR
+{* funcionalidades extra:
+Função editar nome produtos 
+Função criar orçamento/OS (GERAR ARQUIVO PDF). Possibilidade de envio de arquivo via email/whatsapp.
+Criar usuário(login) utilizando Key auth
+Pacote básico, avançado e Premium 
+Disponibilidade de valor mensal, semestral, anual e vitalício 
+Botão para redefinir senha}
